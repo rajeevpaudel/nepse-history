@@ -74,3 +74,12 @@ log section — let the script own it.
 - No data (holiday/out of range): 1
 - Errors: 0
 
+### 2026-07-09T14:09:24+00:00 — run_daily (2026-07-09)
+
+- Dates processed: 5
+- OK: 4
+- No data (holiday/out of range): 1
+- Errors: 0
+- Latest date with data in this run: 2026-07-09
+- Dates with row-count shortfall (see data/discrepancies.csv): 2026-07-06, 2026-07-07, 2026-07-08
+
