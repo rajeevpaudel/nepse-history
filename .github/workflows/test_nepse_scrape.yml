@@ -1,0 +1,37 @@
+name: Test NEPSE scraping
+
+# Manual-only workflow to check whether the primary NEPSE scraper
+# (scripts/fetch_nepse.py) works from GitHub Actions runners, independent of
+# the daily job. Runs in --dry-run mode so it never writes/commits data —
+# use this to isolate NEPSE-side failures (e.g. IP blocks, WASM/auth
+# breakage) from the daily workflow's merolagani fallback.
+
+on:
+  workflow_dispatch:
+    inputs:
+      clear-cache:
+        description: "Clear cached SSL bundle / wasm file before running"
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  test-nepse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run NEPSE scraper (dry-run, no fallback)
+        run: |
+          if [ "${{ github.event.inputs.clear-cache }}" = "true" ]; then
+            python scripts/fetch_nepse.py --dry-run --clear-cache
+          else
+            python scripts/fetch_nepse.py --dry-run
+          fi
