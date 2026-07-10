@@ -37,9 +37,11 @@ from datetime import date, datetime, timedelta, timezone
 
 import fetch_nepse as nepse
 import extract_floorsheet as merolagani
+import build_ohlcv
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(REPO_ROOT, "data", "floorsheet")
+OHLCV_DIR = os.path.join(REPO_ROOT, "data", "ohlcv")
 MANIFEST_PATH = os.path.join(REPO_ROOT, "manifest.json")
 
 DEFAULT_MAX_CATCHUP_DAYS = 10
@@ -206,6 +208,12 @@ def main() -> int:
 
     save_manifest(manifest)
     merolagani.update_progress(f"run_daily ({today.isoformat()})", results)
+
+    # Derive OHLCV for every date this run touched — force=True so a
+    # re-fetched/corrected floorsheet always regenerates its rollup too.
+    print(f"\n=== Deriving OHLCV for: {[d.isoformat() for d in sorted(targets)]} ===")
+    for d in sorted(targets):
+        build_ohlcv.build_for_date(d.isoformat(), args.out_dir, OHLCV_DIR, force=True)
 
     failed = [r for r in results if r["status"] == "error"]
     ok = [r for r in results if r["status"] == "ok"]
