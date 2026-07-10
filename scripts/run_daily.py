@@ -12,7 +12,7 @@ Source priority per date:
     scripts/extract_floorsheet.py (merolagani), which supports arbitrary
     historical dates.
 
-"Missing" here means: no data/floorsheet/<date>.csv file for that date yet.
+"Missing" here means: no data/floorsheet/<year>/<date>.csv file for that date yet.
 That file-existence check is the source of truth for what's already been
 captured (both scripts already skip/no-op past dates that have a file), not
 manifest.json — the manifest is provenance/audit trail, recorded alongside.
@@ -86,15 +86,19 @@ def count_csv_rows(path: str) -> int:
 
 
 def existing_csv_dates(out_dir: str) -> set:
+    """Data lives in per-year subdirectories (data/floorsheet/<year>/<date>.csv)
+    — walk them rather than assuming a flat directory of CSVs.
+    """
     if not os.path.isdir(out_dir):
         return set()
     found = set()
-    for fname in os.listdir(out_dir):
-        if fname.endswith(".csv"):
-            try:
-                found.add(datetime.strptime(fname[:-4], "%Y-%m-%d").date())
-            except ValueError:
-                continue
+    for root, _dirs, files in os.walk(out_dir):
+        for fname in files:
+            if fname.endswith(".csv"):
+                try:
+                    found.add(datetime.strptime(fname[:-4], "%Y-%m-%d").date())
+                except ValueError:
+                    continue
     return found
 
 

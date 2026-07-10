@@ -15,6 +15,10 @@ on:
         type: boolean
         default: true
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   test-nepse:
     runs-on: ubuntu-latest
@@ -29,9 +33,39 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run NEPSE scraper (dry-run, no fallback)
+        id: nepse_test
         run: |
+          set -o pipefail
           if [ "${{ github.event.inputs.clear-cache }}" = "true" ]; then
-            python scripts/fetch_nepse.py --dry-run --clear-cache
+            python scripts/fetch_nepse.py --dry-run --clear-cache 2>&1 | tee nepse_test.log
           else
-            python scripts/fetch_nepse.py --dry-run
+            python scripts/fetch_nepse.py --dry-run 2>&1 | tee nepse_test.log
+          fi
+
+      - name: File/update a GitHub issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          {
+            echo "Workflow run: $RUN_URL"
+            echo ""
+            echo "Failed step: \`python scripts/fetch_nepse.py --dry-run\`"
+            echo ""
+            echo "### Output (tail)"
+            echo '```'
+            tail -n 80 nepse_test.log 2>/dev/null || echo "(no log captured)"
+            echo '```'
+          } > issue_body.md
+
+          existing=$(gh issue list --repo "${{ github.repository }}" \
+            --search "\"NEPSE scraping test failing\" in:title" --state open \
+            --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo "${{ github.repository }}" --body-file issue_body.md
+          else
+            gh issue create --repo "${{ github.repository }}" \
+              --title "NEPSE scraping test failing" \
+              --body-file issue_body.md
           fi

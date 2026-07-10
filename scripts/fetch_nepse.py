@@ -287,7 +287,8 @@ def rows_to_df(raw_rows: list[dict]) -> pd.DataFrame:
 
 
 def date_csv_path(iso_date: str, out_dir: str) -> str:
-    return os.path.join(out_dir, f"{iso_date}.csv")
+    year = iso_date[:4]
+    return os.path.join(out_dir, year, f"{iso_date}.csv")
 
 
 async def scrape_latest(out_dir: str, force: bool = False, dry_run: bool = False,
@@ -342,7 +343,7 @@ async def scrape_latest(out_dir: str, force: bool = False, dry_run: bool = False
         log(note)
         return {"status": "skipped", "date": iso_date, "row_count": len(df), "note": note}
 
-    os.makedirs(out_dir, exist_ok=True)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
     df.to_csv(out_path, index=False)
     log(f"Wrote {len(df)} rows to {out_path}")
     return {"status": "ok", "date": iso_date, "row_count": len(df), "note": ""}

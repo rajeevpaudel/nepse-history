@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract NEPSE floorsheet data from merolagani.com into data/floorsheet/.
+"""Extract NEPSE floorsheet data from merolagani.com into data/floorsheet/<year>/.
 
 Single day:
     python scripts/extract_floorsheet.py --date 2026-06-30
@@ -196,7 +196,7 @@ def candidate_dates(start: date, end: date):
 
 
 def date_csv_path(d: date, out_dir: str) -> str:
-    return os.path.join(out_dir, f"{d.isoformat()}.csv")
+    return os.path.join(out_dir, str(d.year), f"{d.isoformat()}.csv")
 
 
 def fetch_floorsheet_for_date(mmddyyyy: str, max_workers: int = MAX_WORKERS):
@@ -295,6 +295,7 @@ def process_date(d: date, out_dir: str, max_workers: int) -> dict:
     mmddyyyy = d.strftime("%m/%d/%Y")
     iso_date = d.isoformat()
     out_path = date_csv_path(d, out_dir)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
     try:
         df, total_records = fetch_floorsheet_for_date(mmddyyyy, max_workers=max_workers)
     except requests.RequestException as e:
