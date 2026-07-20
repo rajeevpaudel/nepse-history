@@ -159,3 +159,11 @@ log section — let the script own it.
 - No data (holiday/out of range): 2
 - Errors: 0
 
+### 2026-07-20T12:27:49+00:00 — run_daily (2026-07-20)
+
+- Dates processed: 2
+- OK: 1
+- No data (holiday/out of range): 1
+- Errors: 0
+- Latest date with data in this run: 2026-07-20
+
