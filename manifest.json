@@ -214,5 +214,13 @@
     "fetched_at": "2026-07-31T12:16:08+00:00",
     "retries": 0,
     "notes": ""
+  },
+  "2026-08-01": {
+    "source": "missing",
+    "status": "pending",
+    "row_count": 0,
+    "fetched_at": "2026-08-01T11:35:58+00:00",
+    "retries": 0,
+    "notes": "nepse did not return this date; no data yet today \u2014 will retry next run"
   }
 }
