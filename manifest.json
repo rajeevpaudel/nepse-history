@@ -238,5 +238,13 @@
     "fetched_at": "2026-08-03T13:20:13+00:00",
     "retries": 0,
     "notes": ""
+  },
+  "2026-08-04": {
+    "source": "nepse",
+    "status": "ok",
+    "row_count": 52272,
+    "fetched_at": "2026-08-04T12:18:24+00:00",
+    "retries": 0,
+    "notes": ""
   }
 }
