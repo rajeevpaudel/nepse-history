@@ -246,5 +246,13 @@
     "fetched_at": "2026-08-04T12:18:24+00:00",
     "retries": 0,
     "notes": ""
+  },
+  "2026-08-05": {
+    "source": "merolagani",
+    "status": "ok",
+    "row_count": 61284,
+    "fetched_at": "2026-08-05T12:18:22+00:00",
+    "retries": 0,
+    "notes": "nepse did not return this date; row-count shortfall=2"
   }
 }
