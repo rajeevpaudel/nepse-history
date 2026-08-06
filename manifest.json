@@ -254,5 +254,13 @@
     "fetched_at": "2026-08-05T12:18:22+00:00",
     "retries": 0,
     "notes": "nepse did not return this date; row-count shortfall=2"
+  },
+  "2026-08-06": {
+    "source": "nepse",
+    "status": "ok",
+    "row_count": 60381,
+    "fetched_at": "2026-08-06T12:18:27+00:00",
+    "retries": 0,
+    "notes": ""
   }
 }
