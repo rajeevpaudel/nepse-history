@@ -417,3 +417,10 @@ log section — let the script own it.
 - Errors: 0
 - Latest date with data in this run: 2026-08-21
 
+### 2026-08-22T10:39:36+00:00 — run_daily (2026-08-22)
+
+- Dates processed: 1
+- OK: 0
+- No data (holiday/out of range): 1
+- Errors: 0
+
