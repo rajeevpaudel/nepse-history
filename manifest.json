@@ -393,10 +393,18 @@
   },
   "2026-08-23": {
     "source": "missing",
-    "status": "pending",
+    "status": "missing",
     "row_count": 0,
-    "fetched_at": "2026-08-23T10:39:39+00:00",
+    "fetched_at": "2026-08-24T10:52:34+00:00",
     "retries": 0,
-    "notes": "nepse did not return this date; no data yet today \u2014 will retry next run"
+    "notes": "no session (holiday/weekend or out of archive range)"
+  },
+  "2026-08-24": {
+    "source": "nepse",
+    "status": "ok",
+    "row_count": 53153,
+    "fetched_at": "2026-08-24T10:52:19+00:00",
+    "retries": 0,
+    "notes": ""
   }
 }
