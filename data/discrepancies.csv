@@ -4236,3 +4236,4 @@ date,total_records_reported,rows_written,shortfall,status,note,checked_at
 2026-08-22,,0,,no_data,,2026-08-23T10:39:25+00:00
 2026-08-23,,0,,no_data,,2026-08-23T10:39:39+00:00
 2026-08-23,,0,,no_data,,2026-08-24T10:52:34+00:00
+2026-08-27,52575,52525,50,ok,"grid rendered 52525 rows vs 52575 reported — known upstream row-numbering gaps, not a scraping error",2026-08-27T20:30:03+00:00

@@ -422,5 +422,13 @@
     "fetched_at": "2026-08-26T10:51:57+00:00",
     "retries": 0,
     "notes": ""
+  },
+  "2026-08-27": {
+    "source": "merolagani",
+    "status": "ok",
+    "row_count": 52525,
+    "fetched_at": "2026-08-27T20:30:03+00:00",
+    "retries": 0,
+    "notes": "nepse did not return this date; row-count shortfall=50"
   }
 }
