@@ -430,5 +430,13 @@
     "fetched_at": "2026-08-27T20:30:03+00:00",
     "retries": 0,
     "notes": "nepse did not return this date; row-count shortfall=50"
+  },
+  "2026-08-28": {
+    "source": "missing",
+    "status": "pending",
+    "row_count": 0,
+    "fetched_at": "2026-08-28T21:11:50+00:00",
+    "retries": 0,
+    "notes": "nepse did not return this date; no data yet today \u2014 will retry next run"
   }
 }
