@@ -574,5 +574,13 @@
     "fetched_at": "2026-09-14T16:22:27+00:00",
     "retries": 0,
     "notes": ""
+  },
+  "2026-09-15": {
+    "source": "nepse",
+    "status": "ok",
+    "row_count": 78869,
+    "fetched_at": "2026-09-15T14:59:44+00:00",
+    "retries": 0,
+    "notes": ""
   }
 }
