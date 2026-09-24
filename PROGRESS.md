@@ -668,3 +668,12 @@ log section — let the script own it.
 - Errors: 0
 - Latest date with data in this run: 2026-09-23
 
+### 2026-09-24T15:04:38+00:00 — run_daily (2026-09-24)
+
+- Dates processed: 1
+- OK: 1
+- No data (holiday/out of range): 0
+- Errors: 0
+- Latest date with data in this run: 2026-09-24
+- Dates with row-count shortfall (see data/discrepancies.csv): 2026-09-24
+
