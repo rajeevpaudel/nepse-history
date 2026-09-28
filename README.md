@@ -50,7 +50,6 @@ developers don't have to re-solve this problem or pay for it.
 - [Usage](#usage)
 - [Reproducing / running it yourself](#reproducing--running-it-yourself)
 - [Contributing](#contributing)
-- [Roadmap](#roadmap)
 - [License](#license)
 - [Citation](#citation)
 
@@ -390,18 +389,6 @@ Issues and PRs are welcome, particularly:
 Please don't open PRs that hand-edit `data/`, `manifest.json`, or
 `PROGRESS.md` — those are pipeline-generated and any manual edit will be
 overwritten or conflict with the next automated run.
-
-## Roadmap
-
-- [x] Daily OHLCV roll-up as a derived, lower-frequency companion dataset
-      (sequence-resolution only — see [OHLCV dataset](#ohlcv-dataset-derived)).
-- [ ] Parquet mirror alongside the per-day CSVs, once the CSV pipeline has a
-      few more weeks of stable daily runs behind it.
-- [ ] Periodic export to Kaggle / Hugging Face Datasets for easier bulk
-      access without cloning the full git history.
-- [ ] Per-symbol OHLCV pivot (e.g. `NABIL.csv` with its full daily history)
-      as a convenience mirror of the day-partitioned OHLCV files, for users
-      who want a single time series per symbol rather than per-day files.
 
 ## License
 
