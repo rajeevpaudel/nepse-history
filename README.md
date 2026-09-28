@@ -1,6 +1,6 @@
 # NEPSE Floorsheet & OHLCV Dataset
 
-[![Daily floorsheet fetch](https://github.com/rajeevpaudel/merolagani/actions/workflows/daily_floorsheet.yml/badge.svg)](https://github.com/rajeevpaudel/merolagani/actions/workflows/daily_floorsheet.yml)
+[![Daily floorsheet fetch](https://github.com/rajeevpaudel/nepse-history/actions/workflows/daily_floorsheet.yml/badge.svg)](https://github.com/rajeevpaudel/nepse-history/actions/workflows/daily_floorsheet.yml)
 [![License: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
 [![Data size](https://img.shields.io/badge/data-~5GB-lightgrey.svg)](#dataset-structure)
 
@@ -308,14 +308,14 @@ a shallow clone:
 
 ```bash
 # Full clone (includes full git history / audit trail)
-git clone https://github.com/rajeevpaudel/merolagani.git
-cd merolagani
+git clone https://github.com/rajeevpaudel/nepse-history.git
+cd nepse-history
 ```
 
 ```bash
 # Shallow clone — latest snapshot only, much faster/smaller
-git clone --depth 1 https://github.com/rajeevpaudel/merolagani.git
-cd merolagani
+git clone --depth 1 https://github.com/rajeevpaudel/nepse-history.git
+cd nepse-history
 ```
 
 ```python
@@ -420,5 +420,5 @@ If you use this dataset in research, please cite it as:
 
 ```
 Paudel, R. (2026). NEPSE Floorsheet Dataset [Data set].
-GitHub. https://github.com/rajeevpaudel/merolagani
+GitHub. https://github.com/rajeevpaudel/nepse-history
 ```
