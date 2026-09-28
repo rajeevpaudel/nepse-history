@@ -1,5 +1,9 @@
 # NEPSE Floorsheet & OHLCV Dataset
 
+[![Daily floorsheet fetch](https://github.com/rajeevpaudel/merolagani/actions/workflows/daily_floorsheet.yml/badge.svg)](https://github.com/rajeevpaudel/merolagani/actions/workflows/daily_floorsheet.yml)
+[![License: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
+[![Data size](https://img.shields.io/badge/data-~5GB-lightgrey.svg)](#dataset-structure)
+
 A free, open, continuously-updated dataset of **trade-level floorsheet data**
 from the Nepal Stock Exchange (NEPSE) — every individual contract (buyer,
 seller, quantity, rate) for every trading day back to **2015-01-01** — plus a
@@ -298,10 +302,19 @@ checking `manifest.json`.
 ## Usage
 
 Clone (or sparse-checkout, given the repo's size) and read directly with any
-CSV-aware tool:
+CSV-aware tool. The full repo is several GB (`.git` history + `data/`), so if
+you just want the current files without the whole daily-commit history, use
+a shallow clone:
 
 ```bash
+# Full clone (includes full git history / audit trail)
 git clone https://github.com/rajeevpaudel/merolagani.git
+cd merolagani
+```
+
+```bash
+# Shallow clone — latest snapshot only, much faster/smaller
+git clone --depth 1 https://github.com/rajeevpaudel/merolagani.git
 cd merolagani
 ```
 
