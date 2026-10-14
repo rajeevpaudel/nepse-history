@@ -806,5 +806,13 @@
     "fetched_at": "2026-10-13T17:35:25+00:00",
     "retries": 0,
     "notes": ""
+  },
+  "2026-10-14": {
+    "source": "nepse",
+    "status": "ok",
+    "row_count": 39183,
+    "fetched_at": "2026-10-14T15:06:38+00:00",
+    "retries": 0,
+    "notes": ""
   }
 }
