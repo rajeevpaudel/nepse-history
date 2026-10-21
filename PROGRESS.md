@@ -868,3 +868,10 @@ log section — let the script own it.
 - No data (holiday/out of range): 2
 - Errors: 0
 
+### 2026-10-21T15:14:17+00:00 — run_daily (2026-10-21)
+
+- Dates processed: 2
+- OK: 0
+- No data (holiday/out of range): 2
+- Errors: 0
+
