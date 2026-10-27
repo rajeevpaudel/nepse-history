@@ -910,5 +910,13 @@
     "fetched_at": "2026-10-26T16:47:31+00:00",
     "retries": 0,
     "notes": ""
+  },
+  "2026-10-27": {
+    "source": "nepse",
+    "status": "ok",
+    "row_count": 53030,
+    "fetched_at": "2026-10-27T15:52:55+00:00",
+    "retries": 0,
+    "notes": ""
   }
 }
