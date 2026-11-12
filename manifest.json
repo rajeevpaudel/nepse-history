@@ -1033,9 +1033,17 @@
   },
   "2026-11-11": {
     "source": "missing",
+    "status": "missing",
+    "row_count": 0,
+    "fetched_at": "2026-11-12T18:15:28+00:00",
+    "retries": 0,
+    "notes": "no session (holiday/weekend or out of archive range)"
+  },
+  "2026-11-12": {
+    "source": "missing",
     "status": "pending",
     "row_count": 0,
-    "fetched_at": "2026-11-11T17:53:44+00:00",
+    "fetched_at": "2026-11-12T18:15:48+00:00",
     "retries": 0,
     "notes": "nepse did not return this date; no data yet today \u2014 will retry next run"
   }
