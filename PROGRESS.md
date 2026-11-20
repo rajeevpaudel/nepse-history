@@ -1096,3 +1096,12 @@ log section — let the script own it.
 - Latest date with data in this run: 2026-11-19
 - Dates with row-count shortfall (see data/discrepancies.csv): 2026-11-19
 
+### 2026-11-20T18:36:38+00:00 — run_daily (2026-11-20)
+
+- Dates processed: 1
+- OK: 1
+- No data (holiday/out of range): 0
+- Errors: 0
+- Latest date with data in this run: 2026-11-20
+- Dates with row-count shortfall (see data/discrepancies.csv): 2026-11-20
+

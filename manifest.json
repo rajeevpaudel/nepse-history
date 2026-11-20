@@ -1102,5 +1102,13 @@
     "fetched_at": "2026-11-19T18:59:58+00:00",
     "retries": 0,
     "notes": "nepse did not return this date; row-count shortfall=19"
+  },
+  "2026-11-20": {
+    "source": "merolagani",
+    "status": "ok",
+    "row_count": 39927,
+    "fetched_at": "2026-11-20T18:36:38+00:00",
+    "retries": 0,
+    "notes": "nepse did not return this date; row-count shortfall=39"
   }
 }
